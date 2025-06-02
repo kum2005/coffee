@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brew & Blend</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      height: 100%;
+    }
+
+    body {
+      background: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      flex: 1;
+      padding-bottom: 40px;
+    }
+
+   /* nav {
+      background-color: #5c4033;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+
+    nav .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin-left: 18px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+    }*/
+
+    .main-section {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 40px 20px;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .map-shape {
+      background: white;
+      color: #333;
+      padding: 20px;
+      border-radius: 30px 10px 30px 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      flex: 1;
+      min-width: 300px;
+      max-width: 450px;
+    }
+
+    .map-shape iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 12px;
+    }
+
+    .about-box {
+      background: #fffdfc;
+      color: #333;
+      padding: 20px;
+      border-radius: 12px;
+      flex: 1;
+      min-width: 300px;
+      max-width: 450px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .about-box h2 {
+      color: #5c4033;
+      margin-bottom: 10px;
+    }
+
+    .about-box p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      margin: 10px 6px;
+      font-size: 16px;
+      padding: 8px;
+      border-radius: 50%;
+      color: white;
+    }
+
+    .google { background-color: #db4437; }
+    .facebook { background-color: #3b5998; }
+    .twitter { background-color: #1da1f2; }
+
+    footer {
+      background: #222;
+      color: white;
+      padding: 30px 20px;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: space-between;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .contact-details {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .contact-details h3 {
+      color: #f0c382;
+      margin-bottom: 10px;
+    }
+
+    .contact-details p {
+      font-size: 13px;
+      margin: 6px 0;
+    }
+
+    .contact-form {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .contact-form h3 {
+      color: #f0c382;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .form-wrapper {
+      position: relative;
+    }
+
+    .form-wrapper textarea {
+      width: 100%;
+      height: 80px;
+      padding: 10px 90px 10px 10px;
+      font-size: 13px;
+      border: none;
+      border-radius: 6px;
+      resize: none;
+    }
+
+    .form-wrapper button {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #f0c382;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      color: #333;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .form-wrapper button:hover {
+      background-color: #e0b06f;
+    }
+
+    @media (max-width: 768px) {
+      .main-section,
+      .footer-content {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .form-wrapper textarea {
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page Overlay -->
+  <div class="overlay">
+
+    <!-- Navigation 
+    <nav>
+      <div class="logo">Brew & Blend</div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>-->
+
+    <!-- Map & About Section -->
+    <div class="main-section">
+      <div class="map-shape">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.812160353412!2d72.8272728!3d18.9309444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7d1d1f0a3d1b1%3A0x2b8e1f8c7e1a2b1c!2sChurchgate%2C%20Mumbai%2C%20Maharashtra%20400020!5e0!3m2!1sen!2sin!4v1688735678910!5m2!1sen!2sin"
+          allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+
+      <div class="about-box">
+        <h2>About Us</h2>
+        <p>Welcome to AK Delights,we specialize in bringing you the finest selection of coffee,tea and milkshakes,made with the highest quality ingredients. Whether you're a coffee lover, a tea enthusiast, or someone craving a refreshing milkshake, our goal is to provide a delightful experience in every sip. We’re committed to offering not just a drink, but a genuine experience, making AK Delights the perfect spot for your daily dose of happiness!</p>
+        <div class="social-icons">
+          <a href="#" class="google" title="Google"><i class="fab fa-google"></i></a>
+          <a href="#" class="facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- End Overlay -->
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="contact-details">
+        <h3>Contact Us</h3>
+        <p><i class="fas fa-map-marker-alt"></i> 123 AK Delights's, Coffee, Tea & Milkshake Town</p>
+        <p><i class="fas fa-phone-alt"></i> +1 (123) 456-7890</p>
+        <p><i class="fas fa-envelope"></i> contact@AKDelight.com</p>
+      </div>
+      <div class="contact-form">
+        <h3>Send a Message</h3>
+        <form>
+          <div class="form-wrapper">
+            <textarea placeholder="Write your message..." required></textarea>
+            <button type="submit">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

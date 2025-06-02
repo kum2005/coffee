@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AK Delights - Sign In / Login</title>
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* color: #4b3b2b; */
+  /* min-height: 100vh; */
+  /* background: linear-gradient(135deg, #f3e6d7 0%, #b8894e 100%); */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
+}
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px); 
+  padding: 2rem 1rem;
+}
+
+  /* body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        rgba(180,95,6,0.05),
+        rgba(180,95,6,0.05) 10px,
+        transparent 10px,
+        transparent 20px
+      );
+    z-index: 0;
+  } */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+  
+
+  
+  .navbar {
+    background: #4B3929;
+    padding: 1rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+  }
+  
+  .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #9A8468;
+    font-family: "IBM Plex Mono", monospace;
+    -weight: 500;
+    font-style: normal;
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500;
+    font-style: normal;
+    
+  }
+  
+  .nav-links a {
+    color: #d8a867;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .search-input {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #9A8468;
+    
+  }
+  .search-input::placeholder {
+  color: #000000; 
+  }
+  
+  .signin-btn {
+    background-color: #4B3929;
+    padding: 9px 16px;
+    border-radius: 20px 20px;
+    border-color: #492c13;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .signin-btn a{
+    text-decoration: none;
+    color: #9A8468;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500;
+    font-style: normal;
+  }
+  .auth-container {
+    position: relative;
+    background: #4B3929; /* Semi-transparent warm cream */
+    max-width: 420px;
+    width: 90%;
+    border-radius: 14px;
+    box-shadow:
+      0 10px 30px rgba(180,95,6,0.25),
+      0 4px 12px rgba(180,95,6,0.15);
+    z-index: 1;
+    backdrop-filter: saturate(180%) blur(10px);
+  }
+  .tabs {
+    display: flex;
+    border-bottom: 3px solid #ff8400;
+    user-select: none;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+  }
+  .tab {
+    flex: 1;
+    text-align: center;
+    padding: 1rem 0;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #b45f06;
+    background-color: #3a2610bb;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-bottom: 3px solid transparent;
+  }
+  .tab.selected {
+    background-color: white;
+    color: #7a4a00;
+    border-bottom: 3px solid white;
+  }
+  .form-container {
+    padding: 2.5rem 2rem 2rem 2rem;
+  }
+  h1 {
+    margin-bottom: 0.2rem;
+    font-size: 2.2rem;
+    color: #b45f06;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    margin-top: 1rem;
+  }
+  label {
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: left;
+    color: #ffffff;
+  }
+  input[type="email"],
+  input[type="password"] {
+    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
+    border: 2px solid #b45f06;
+    border-radius: 6px;
+    outline-offset: 2px;
+    transition: border-color 0.3s ease;
+    background: #fefcf7;
+  }
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    border-color: #d97706;
+  }
+  button {
+    background-color: #b45f06;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 0.7rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(180,95,6,0.35);
+  }
+  button:hover {
+    background-color: #d07707;
+  }
+  .back-link {
+    margin-top: 1.8rem;
+    font-size: 0.95rem;
+    color: #ff8000;
+    text-align: center;
+  }
+  .back-link a {
+    color: #ffba70;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px #000000;
+  }
+  .back-link a:hover {
+    text-decoration: underline;
+  }
+  .hidden {
+    display: none;
+  }
+  .or-separator {
+    display: flex;
+    align-items: center;
+    margin: 1.8rem 0 1.3rem 0;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #7a6a57;
+  }
+  .or-separator::before,
+  .or-separator::after {
+    content: '';
+    flex-grow: 1;
+    border-bottom: 1px solid #e2c9a0;
+    margin: 0 10px;
+  }
+  
+  .social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  .social-button {
+    flex: 1 1 30%;
+    max-width: 120px;
+    background: #fff8f0;
+    border-radius: 8px;
+    padding: 0.5rem 0;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 700;
+    color: #4b3b2b;
+    border: 2px solid transparent;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 1px 4px rgba(180,95,6,0.15);
+  }
+  .social-button svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+  }
+  .social-button.google { background-color: #fff; border-color: #db4437; color: #db4437; }
+  .social-button.google:hover {
+    background-color: #db4437;
+    color: white;
+    box-shadow: 0 4px 12px rgba(219, 68, 55, 0.6);
+  }
+  .social-button.facebook { background-color: #fff; color: #1877f2; border-color: #1877f2; }
+  .social-button.facebook:hover {
+    background-color: #1877f2;
+    color: white;
+    box-shadow: 0 4px 12px rgba(24, 119, 242, 0.6);
+  }
+  .social-button.twitter { background-color: #fff; color: #1da1f2; border-color: #1da1f2; }
+  .social-button.twitter:hover {
+    background-color: #1da1f2;
+    color: white;
+    box-shadow: 0 4px 12px rgba(29, 161, 242, 0.6);
+  }
+
+  @media (max-width: 480px) {
+    .auth-container {
+      width: 95%;
+    }
+    h1 {
+      font-size: 1.8rem;
+    }
+    button {
+      font-size: 1rem;
+      padding: 0.6rem;
+    }
+    .social-button {
+      max-width: 100%;
+      flex-grow: 1;
+      justify-content: center;
+    }
+  }
+/* .bubble-tea-gif{
+  position: absolute;
+  top: 6rem;
+  right: 60px;
+  width: 200px;
+  height: auto;
+  z-index: -1;
+  background: transparent;
+}
+.coffie-break-gif{
+  position: absolute;
+  top: 6rem;
+  left: 60px;
+  width: 200px;
+  height: auto;
+  z-index: -1;
+  background: transparent;
+}
+.coffie-cup-gif{
+  position: absolute;
+  top: 26rem;
+  left: 190px;
+  width: 200px;
+  height: auto;
+  z-index: -1;
+  background: transparent;
+}
+.tea-gif{
+  position: absolute;
+  top: 26rem;
+  right: 190px;
+  width: 200px;
+  height: auto;
+  z-index: -1;
+  background: transparent;
+}
+.squares-canvas {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+} */
+.bgimage{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+</style>
+</head>  
+
+<body>
+  <header class="navbar">
+    <div class="logo">Ak Delights</div>
+    <nav class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Products</a>
+      <a href="#">Shop</a>
+      <a href="#">About</a>
+      <a href="#">Contact Us</a>
+ 
+    </nav>
+ 
+  </header> 
+  <img  class = "bgimage"src="premium_photo-1675435646793-f6ceb239b064.avif" class="bg">
+   <main class="page-wrapper">
+  <div class="auth-container" role="main" aria-label="Sign In and Login">
+    <nav class="tabs" role="tablist" aria-label="Authentication Tabs">
+      <button class="tab selected" role="tab" id="signInTab" aria-selected="true" aria-controls="signInPanel" tabindex="0">Sign In</button>
+      <button class="tab" role="tab" id="loginTab" aria-selected="false" aria-controls="loginPanel" tabindex="-1">Login</button>
+    </nav>
+    <div class="form-container">
+      <section id="signInPanel" role="tabpanel" aria-labelledby="signInTab">
+        <h1>Sign In</h1>
+        <form id="signInForm" aria-label="Sign In Form" novalidate>
+          <label for="signInEmail">Email address</label>
+          <input type="email" id="signInEmail" name="email" placeholder="you@example.com" required autocomplete="email" />
+          
+          <label for="signInPassword">Password</label>
+          <input type="password" id="signInPassword" name="password" placeholder="Your password" required autocomplete="current-password" />
+          
+          <button type="submit">Sign In</button>
+        </form>
+        <div class="or-separator" aria-label="Or sign in with">OR</div>
+        <div class="social-buttons" role="group" aria-label="Sign in with social accounts">
+          <button type="button" class="social-button google" aria-label="Sign in with Google" id="googleSignIn">
+            <svg viewBox="0 0 533.5 544.3" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <path d="M533.5 278.4c0-17.4-1.6-34.2-4.6-50.4H272.1v95.5h147.1c-6.3 34.2-25 63.3-53.6 82.9v68h86.3c50.5-46.4 79.6-115 79.6-195.9z" fill="#4285f4"/>
+              <path d="M272.1 544.3c72.7 0 133.7-24.1 178.3-65.6l-86.3-68c-24 16.2-54.8 25.7-92 25.7-70.7 0-130.7-47.8-152.2-112.2h-89.8v70.5c44.9 88.2 137.5 150.6 242 150.6z" fill="#34a853"/>
+              <path d="M119.9 325.6a157.6 157.6 0 0 1 0-101.2v-70.5H30.1a272.2 272.2 0 0 0 0 242.2l89.8-70.5z" fill="#fbbc04"/>
+              <path d="M272.1 107.8c39.6 0 75.2 13.6 103.2 40.3l77.3-77.3C409.1 26.5 354.5 0 272.1 0 167.6 0 74.9 62.4 30.1 150.6l89.8 70.5c21.4-64.3 81.4-112.2 152.2-112.2z" fill="#ea4335"/>
+            </svg>
+           
+          </button>
+          <button type="button" class="social-button facebook" aria-label="Sign in with Facebook" id="facebookSignIn">
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22.675 0H1.325C.593 0 0 .592 0 1.324v21.352C0 23.408.593 24 1.325 24h11.495v-9.294H9.691v-3.622h3.129V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.466.098 2.797.142v3.243l-1.918.001c-1.504 0-1.796.716-1.796 1.763v2.312h3.59l-.467 3.622h-3.123V24h6.116c.73 0 1.324-.592 1.324-1.324V1.324c0-.732-.594-1.324-1.324-1.324z"/>
+            </svg>
+            
+          </button>
+          <button type="button" class="social-button twitter" aria-label="Sign in with Twitter" id="twitterSignIn">
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.954 4.569c-.885.393-1.83.656-2.825.775a4.932 4.932 0 0 0 2.163-2.724c-.951.564-2.005.974-3.127 1.195a4.92 4.92 0 0 0-8.384 4.482A13.969 13.969 0 0 1 1.671 3.149a4.92 4.92 0 0 0 1.523 6.573 4.903 4.903 0 0 1-2.23-.616c-.054 2.281 1.581 4.415 3.991 4.89a4.935 4.935 0 0 1-2.224.085 4.922 4.922 0 0 0 4.6 3.417 9.867 9.867 0 0 1-6.102 2.105c-.396 0-.787-.023-1.17-.068a13.945 13.945 0 0 0 7.557 2.213c9.054 0 14.001-7.5 14.001-14 0-.21 0-.423-.015-.63A10.025 10.025 0 0 0 24 4.59z"/>
+            </svg>
+            
+          </button>
+        </div>
+      </section>
+      <section id="loginPanel" role="tabpanel" aria-labelledby="loginTab" class="hidden">
+        <h1>Login</h1>
+        <form id="loginForm" aria-label="Login Form" novalidate>
+          <label for="loginEmail">Email address</label>
+          <input type="email" id="loginEmail" name="email" placeholder="you@example.com" required autocomplete="email" />
+          
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" name="password" placeholder="Your password" required autocomplete="current-password" />
+          
+          <button type="submit">Login</button>
+        </form>
+        <div class="or-separator" aria-label="Or sign in with">OR</div>
+        <div class="social-buttons" role="group" aria-label="Login with social accounts">
+          <button type="button" class="social-button google" aria-label="Login with Google" id="googleLogin">
+            <svg viewBox="0 0 533.5 544.3" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <path d="M533.5 278.4c0-17.4-1.6-34.2-4.6-50.4H272.1v95.5h147.1c-6.3 34.2-25 63.3-53.6 82.9v68h86.3c50.5-46.4 79.6-115 79.6-195.9z" fill="#4285f4"/>
+              <path d="M272.1 544.3c72.7 0 133.7-24.1 178.3-65.6l-86.3-68c-24 16.2-54.8 25.7-92 25.7-70.7 0-130.7-47.8-152.2-112.2h-89.8v70.5c44.9 88.2 137.5 150.6 242 150.6z" fill="#34a853"/>
+              <path d="M119.9 325.6a157.6 157.6 0 0 1 0-101.2v-70.5H30.1a272.2 272.2 0 0 0 0 242.2l89.8-70.5z" fill="#fbbc04"/>
+              <path d="M272.1 107.8c39.6 0 75.2 13.6 103.2 40.3l77.3-77.3C409.1 26.5 354.5 0 272.1 0 167.6 0 74.9 62.4 30.1 150.6l89.8 70.5c21.4-64.3 81.4-112.2 152.2-112.2z" fill="#ea4335"/>
+            </svg>
+           
+          </button>
+          <button type="button" class="social-button facebook" aria-label="Login with Facebook" id="facebookLogin">
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22.675 0H1.325C.593 0 0 .592 0 1.324v21.352C0 23.408.593 24 1.325 24h11.495v-9.294H9.691v-3.622h3.129V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.466.098 2.797.142v3.243l-1.918.001c-1.504 0-1.796.716-1.796 1.763v2.312h3.59l-.467 3.622h-3.123V24h6.116c.73 0 1.324-.592 1.324-1.324V1.324c0-.732-.594-1.324-1.324-1.324z"/>
+            </svg>
+            
+          </button>
+          <button type="button" class="social-button twitter" aria-label="Login with Twitter" id="twitterLogin">
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.954 4.569c-.885.393-1.83.656-2.825.775a4.932 4.932 0 0 0 2.163-2.724c-.951.564-2.005.974-3.127 1.195a4.92 4.92 0 0 0-8.384 4.482A13.969 13.969 0 0 1 1.671 3.149a4.92 4.92 0 0 0 1.523 6.573 4.903 4.903 0 0 1-2.23-.616c-.054 2.281 1.581 4.415 3.991 4.89a4.935 4.935 0 0 1-2.224.085 4.922 4.922 0 0 0 4.6 3.417 9.867 9.867 0 0 1-6.102 2.105c-.396 0-.787-.023-1.17-.068a13.945 13.945 0 0 0 7.557 2.213c9.054 0 14.001-7.5 14.001-14 0-.21 0-.423-.015-.63A10.025 10.025 0 0 0 24 4.59z"/>
+            </svg>
+            
+          </button>
+        </div>
+      </section>
+      <div class="back-link">
+        <a href="homepg2.html">Back to Cafe Delights</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      const tabs = document.querySelectorAll('.tab');
+      // Tab functionality
+      function selectTab(selectedTab) {
+        tabs.forEach(tab => {
+          const isSelected = (tab === selectedTab);
+          tab.classList.toggle('selected', isSelected);
+          tab.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+          tab.tabIndex = isSelected ? 0 : -1;
+          const panel = document.getElementById(tab.getAttribute('aria-controls'));
+          if(panel){
+            panel.classList.toggle('hidden', !isSelected);
+          }
+        });
+        // Focus first input in visible panel
+        const visiblePanel = document.querySelector('section:not(.hidden)');
+        if(visiblePanel){
+          const firstInput = visiblePanel.querySelector('input');
+          if(firstInput) firstInput.focus();
+        }
+      }
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => selectTab(tab));
+        tab.addEventListener('keydown', e => {
+          let index = Array.prototype.indexOf.call(tabs, tab);
+          if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            tabs[(index + 1) % tabs.length].focus();
+          } else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            tabs[(index - 1 + tabs.length) % tabs.length].focus();
+          } else if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            selectTab(tab);
+          }
+        });
+      });
+      // Form submissions
+      document.getElementById('signInForm').addEventListener('submit', e => {
+        e.preventDefault();
+        const email = e.target.email.value.trim();
+        const password = e.target.password.value.trim();
+        if(email && password){
+          alert('Welcome back, ' + email + '! (Signed In)');
+        } else {
+          alert('Please fill out both email and password fields.');
+        }
+      });
+      document.getElementById('loginForm').addEventListener('submit', e => {
+        e.preventDefault();
+        const email = e.target.email.value.trim();
+        const password = e.target.password.value.trim();
+        if(email && password){
+          alert('Successfully logged in as ' + email + '!');
+        } else {
+          alert('Please fill out both email and password fields.');
+        }
+      });
+      // Social button handlers
+      function socialAlert(provider, action) {
+        alert(action + ' with ' + provider + ' is currently not implemented.');
+      }
+      document.getElementById('googleSignIn').addEventListener('click', () => socialAlert('Google', 'Sign In'));
+      document.getElementById('facebookSignIn').addEventListener('click', () => socialAlert('Facebook', 'Sign In'));
+      document.getElementById('twitterSignIn').addEventListener('click', () => socialAlert('Twitter', 'Sign In'));
+      document.getElementById('googleLogin').addEventListener('click', () => socialAlert('Google', 'Login'));
+      document.getElementById('facebookLogin').addEventListener('click', () => socialAlert('Facebook', 'Login'));
+      document.getElementById('twitterLogin').addEventListener('click', () => socialAlert('Twitter', 'Login'));
+    })();
+  </script>
+</body>
+</html>

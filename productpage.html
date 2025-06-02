@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Coffee, Tea & Milkshake Shop</title>
+<link rel="stylesheet" href="productpage.css" />
+</head>
+<body>
+
+<h1>Coffee, Tea & Milkshake Delights</h1>
+<p class="description">Discover our finest collection of aromatic coffees, refreshing teas, and creamy milkshakes. Choose your favorites and add them to your cart!</p>
+
+<div id="products-container" aria-live="polite" aria-label="Product List">
+  <!-- Products injected by JS -->
+</div>
+
+<!-- Cart toggle button -->
+<button id="toggle-cart-btn" aria-label="Toggle shopping cart">🛒<span id="cart-count" style="margin-left:5px; font-weight:700;"></span></button>
+
+<!-- Shopping cart panel -->
+<div id="cart" aria-label="Shopping Cart" role="complementary" aria-hidden="true">
+  <h2>Your Cart</h2>
+  <div id="cart-list"></div>
+  <div id="cart-empty">Your cart is empty.</div>
+  <div id="cart-total" aria-live="polite" aria-atomic="true"></div>
+</div>
+
+<script src="productpage.js"></script>
+</body>
+</html>

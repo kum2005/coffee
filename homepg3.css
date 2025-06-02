@@ -1,0 +1,253 @@
+/* General Styles */
+* {
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  scroll-behavior: smooth;
+  color: #333;
+  background: none;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #6E3C19; /* Dark brown */
+  color: #fff;
+  padding: 15px;
+}
+
+/* Hero Section Styles */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  background-image: url('main.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: transparent;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: #6D4C41;
+  padding-top: 40vh;
+}
+
+/* Atmosphere Section */
+.atmosphere-section {
+  background-image: url('main2.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #af3f02;
+}
+
+/* Menu Section */
+.menu-section, 
+.signature-menu-section, 
+.products-section, 
+.signin-section {
+  background-image: url('main.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.menu-section, 
+.signature-menu-section {
+  color: #6D4C41;
+}
+
+.products-section {
+  color: #af3f02;
+}
+
+/* Team Section */
+.team-section {
+  background-image: url('main2.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Section Padding */
+section {
+  padding: 20px 0;
+}
+
+/* Main Section */
+.main-section {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Map Shape */
+.map-shape {
+  background: white;
+  color: #333;
+  padding: 20px;
+  border-radius: 30px 10px 30px 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  flex: 1;
+  min-width: 300px;
+  max-width: 450px;
+}
+
+.map-shape iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 12px;
+}
+
+/* About Box */
+.about-box {
+  background: #fffdfc;
+  color: #333;
+  padding: 20px;
+  border-radius: 12px;
+  flex: 1;
+  min-width: 300px;
+  max-width: 450px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.about-box h2 {
+  color: #5c4033;
+  margin-bottom: 10px;
+}
+
+.about-box p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* Social Icons */
+.social-icons a {
+  display: inline-block;
+  margin: 10px 6px;
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 50%;
+  color: white;
+}
+
+.google { background-color: #db4437; }
+.facebook { background-color: #3b5998; }
+.twitter { background-color: #1da1f2; }
+
+/* Footer */
+footer {
+  background-color: #4B3D3D;
+  color: white;
+  padding: 12px 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.contact-details, .contact-form {
+  flex: 1;
+  min-width: 250px;
+}
+
+.contact-details h3, .contact-form h3 {
+  color: #f0c382;
+  margin-bottom: 10px;
+}
+
+.contact-details p {
+  font-size: 13px;
+  margin: 6px 0;
+}
+
+/* Contact Form */
+.form-wrapper {
+  position: relative;
+}
+
+.form-wrapper textarea {
+  width: 100%;
+  height: 80px;
+  padding: 10px 90px 10px 10px;
+  font-size: 13px;
+  border: none;
+  border-radius: 6px;
+  resize: none;
+}
+
+.form-wrapper button {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #f0c382;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.form-wrapper button:hover {
+  background-color: #e0b06f;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-section,
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-wrapper textarea {
+    height: 100px;
+  }
+}
+#menuBtn:hover #menuIcon {
+  filter: invert(1);
+}
+.custom-cursor {
+  position: fixed;
+  top: 0; left: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #6D4C41;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+  z-index: 9999;
+}
+
+body, html {
+  cursor: none;
+}
+.cursor, .trail {
+  position: fixed;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: #6D4C41;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
